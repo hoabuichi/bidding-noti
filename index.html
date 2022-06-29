@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIG</title>
+    <!-- JavaScript Bundle with Popper -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="readmore.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="bidding-dashboard-index">
+        <div class="container">
+          <div class="bidding-dashboard-container">
+            <div class="left-side-bar">
+              <div class="right-icon">
+                <i class="bi bi-chevron-right"></i>
+              </div>
+              <div class="tab-bar-item active">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <div class="tab-bar-item">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="tab-bar-item">
+                <i class="bi bi-bell-fill"></i>
+              </div>
+              <div class="tab-bar-item">
+                <i class="bi bi-book-fill"></i>
+              </div>
+              <div class="tab-bar-item">
+                <i class="bi bi-bookmark-star-fill"></i>
+              </div>
+              <div class="tab-bar-item">
+                <i class="bi bi-journal-bookmark-fill"></i>
+              </div>
+              <div class="tab-bar-item">
+                <i class="bi bi-file-earmark-fill"></i>
+              </div>
+            </div>
+            <div class="right-side">
+              <div class="breadcrumbs">
+                <a>Home</a><span></span><a>Thông báo mời thầu</a>
+              </div>
+              <div class="dashboard-tables">
+                <div class="table-container">
+                  <h3 class="title">Quản lý thông báo mời thầu</h3>
+                  <div class="filter-section">
+                    <div class="left-filter">
+                      <div class="filter-icon second">
+                        <i class="bi bi-funnel"></i>
+                      </div>
+                      <div class="search-input">
+                        <input type="text" placeholder="Tìm kiếm gói thầu" />
+                        <i class="bi bi-search"></i>
+                      </div>
+                    </div>
+                    <div class="filter-option second">
+                      <div class="header">
+                        <h4 class="title">Lọc thông tin</h4>
+                        <button class="clear-filter-btn second">Bỏ lọc</button>
+                      </div>
+                      <div class="options">
+                        <div class="option">
+                          <label>Trạng thái</label>
+                          <select>
+                            <option>-</option>
+                            <option>Chưa đăng tải</option>
+                            <option>Đã đăng tải</option>
+                          </select>
+                        </div>
+                        <div class="option">
+                          <label>Ngày tạo</label>
+                          <input type="date" />
+                        </div>
+                        <div class="option">
+                          <label>Ngày cập nhật</label>
+                          <input type="date" />
+                        </div>
+                        <div class="option">
+                          <label>Ngày đóng thầu</label>
+                          <input type="date" />
+                        </div>
+                      </div>
+                      <button class="filter-btn">Lọc ngay</button>
+                    </div>
+                  </div>
+                  <div class="right-filter">
+                    <button class="add-btn">Thêm TBMT</button>
+                  </div>
+                  <table class="dashboard-table">
+                    <tr>
+                      <th>Tên gói thầu</th>
+                      <th>Dự toán gói thầu</th>
+                      <th>Thời điểm đăng tải</th>
+                      <th>Thời điểm đóng thầu</th>
+                      <th>Lĩnh vực</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>Xây dựng gói thầu nhà ở.....</td>
+                      <td>3.000.000.000 đ</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>Sản xuất</td>
+                      <td>
+                        <button class="action-btn">...</button>
+                        <div class="popup-content">
+                          <div class="item">
+                            <i class="bi bi-arrow-up"></i>
+                            <label>Gia hạn</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-stopwatch"></i>
+                            <label>Hiển thị</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-pencil"></i>
+                            <label>Chỉnh sửa</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-trash"></i>
+                            <label>Xóa</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Xây dựng gói thầu nhà ở.....</td>
+                      <td>3.000.000.000 đ</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>Sản xuất</td>
+                      <td>
+                        <button class="action-btn">...</button>
+                        <div class="popup-content">
+                          <div class="item">
+                            <i class="bi bi-arrow-up"></i>
+                            <label>Gia hạn</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-stopwatch"></i>
+                            <label>Hiển thị</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-pencil"></i>
+                            <label>Chỉnh sửa</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-trash"></i>
+                            <label>Xóa</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Xây dựng gói thầu nhà ở.....</td>
+                      <td>3.000.000.000 đ</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>Sản xuất</td>
+                      <td>
+                        <button class="action-btn">...</button>
+                        <div class="popup-content">
+                          <div class="item">
+                            <i class="bi bi-arrow-up"></i>
+                            <label>Gia hạn</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-stopwatch"></i>
+                            <label>Hiển thị</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-pencil"></i>
+                            <label>Chỉnh sửa</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-trash"></i>
+                            <label>Xóa</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Xây dựng gói thầu nhà ở.....</td>
+                      <td>3.000.000.000 đ</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>9:00 25/05/2022</td>
+                      <td>Sản xuất</td>
+                      <td>
+                        <button class="action-btn">...</button>
+                        <div class="popup-content">
+                          <div class="item">
+                            <i class="bi bi-arrow-up"></i>
+                            <label>Gia hạn</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-stopwatch"></i>
+                            <label>Hiển thị</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-pencil"></i>
+                            <label>Chỉnh sửa</label>
+                          </div>
+                          <div class="item">
+                            <i class="bi bi-trash"></i>
+                            <label>Xóa</label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="table-items">
+                    <div class="table-item">
+                      <table class="dashboard-table-item">
+                        <tr>
+                          <td class="stt" colspan="2"><span>STT : 1</span></td>
+                        </tr>
+                        <tr>
+                          <td>Tên gói thầu</td>
+                          <td>Xây dựng gói thầu nhà ở.....</td>
+                        </tr>
+                        <tr>
+                          <td>Dự toán gói thầu</td>
+                          <td>3.000.000.000 đ</td>
+                        </tr>
+                        <tr>
+                          <td>Thời điểm đăng tải</td>
+                          <td>9:00 25/05/2022</td>
+                        </tr>
+                        <tr>
+                          <td>Thời điểm đóng thầu</td>
+                          <td>9:00 25/05/2022</td>
+                        </tr>
+                        <tr>
+                          <td>Lĩnh vực</td>
+                          <td>Sản xuất</td>
+                        </tr>
+                        <tr class="action-trigger">
+                          <td colspan="2">...</td>
+                        </tr>
+                        <tr class="popup-content-row">
+                          <td colspan="2" class="action">
+                            <div class="popup-content-mobile">
+                              <div class="item">
+                                <i class="bi bi-arrow-up"></i>
+                                <label>Gia hạn</label>
+                              </div>
+                              <div class="item">
+                                <i class="bi bi-stopwatch"></i>
+                                <label>Hiển thị</label>
+                              </div>
+                              <div class="item">
+                                <i class="bi bi-pencil"></i>
+                                <label>Chỉnh sửa</label>
+                              </div>
+                              <div class="item">
+                                <i class="bi bi-trash"></i>
+                                <label>Xóa</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="pagination-custom">
+                    <label>Hiển thị 10 trong 25 bản ghi</label>
+                    <div class="pager">
+                      <a class="item"><i class="bi bi-chevron-left"></i></a>
+                      <a class="item active">1</a>
+                      <a class="item">2</a>
+                      <a class="item">3</a>
+                      <a class="item">
+                        <i class="bi bi-chevron-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bottom-banner"
+            style="background-image: url('./images/bottom-banner.png')"
+          ></div>
+        </div>
+      </div>
+    </main>
+    <script>
+      $(".filter-icon.first").click(function () {
+        $(".filter-option.first").toggle();
+        $(".filter-icon.first").toggleClass("active");
+
+        $(".filter-option.second").hide();
+        $(".filter-icon.second").removeClass("active");
+      });
+
+      $(".clear-filter-btn.first").click(function () {
+        $(".filter-option.first").hide();
+        $(".filter-icon.first").removeClass("active");
+      });
+
+      $(".filter-icon.second").click(function () {
+        $(".filter-option.second").toggle();
+        $(".filter-icon.second").toggleClass("active");
+
+        $(".filter-option.first").hide();
+        $(".filter-icon.first").removeClass("active");
+      });
+
+      $(".clear-filter-btn.second").click(function () {
+        $(".filter-option.second").hide();
+        $(".filter-icon.second").removeClass("active");
+      });
+
+      $(".action-btn").click(function () {
+        $(".popup-content").hide();
+        $(this).next().show();
+      });
+
+      $(".action-trigger").click(function () {
+        $(this).next().toggle();
+      });
+
+      $(document).click(function (event) {
+        var $target = $(event.target);
+        if (
+          !$target.closest(".popup-content").length &&
+          !$target.closest(".action-btn").length &&
+          $(".popup-content").is(":visible")
+        ) {
+          $(".popup-content").hide();
+        }
+      });
+
+      var data = {
+        labels: [
+          "Xây dựng hệ thống TCT",
+          "Thiết kế trường học",
+          "Cung cấp lắp đặt",
+          "Tư vấn giải pháp CĐS",
+          "Thi công xây dựng",
+        ],
+        datasets: [
+          {
+            data: [300, 50, 100, 80, 70],
+            backgroundColor: [
+              "#143363",
+              "#E58514",
+              "#1EA728",
+              "#DF2727",
+              "#212121",
+            ],
+            hoverBackgroundColor: [
+              "#143363",
+              "#E58514",
+              "#1EA728",
+              "#DF2727",
+              "#212121",
+            ],
+          },
+        ],
+      };
+
+      const config = {
+        type: "doughnut",
+        data: data,
+        options: {
+          responsive: true,
+          cutout: 100,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      };
+
+      const chart1 = new Chart(document.getElementById("chart-1"), config);
+      const chart2 = new Chart(document.getElementById("chart-2"), config);
+    </script>
+  </body>
+</html>
